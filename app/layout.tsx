@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import dynamic from "next/dynamic";
 import "./globals.css";
 import { BUSINESS, SITE_URL } from "@/lib/config";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
+// Deferred — fades in after 800 ms, no SSR value
+const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"), { ssr: false });
 
 const inter = Inter({
   // latin-ext is required for proper Turkish character rendering (ş ğ ü ö ç ı)

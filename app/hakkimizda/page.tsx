@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import StatsBar from "@/components/StatsBar";
 import { BUSINESS, SITE_URL } from "@/lib/config";
+
+// Deferred: splits framer-motion into a separate async chunk
+const StatsBar = dynamic(() => import("@/components/StatsBar"));
 
 export const metadata: Metadata = {
   title: "Hakkımızda | Antalya Hurdacı",

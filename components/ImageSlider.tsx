@@ -30,7 +30,7 @@ export default function ImageSlider() {
             fill
             sizes="(max-width:1024px) 100vw, 44vw"
             className="object-cover"
-            priority={i === 0}
+            loading="lazy"
           />
         </div>
       ))}

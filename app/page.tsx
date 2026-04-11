@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import ImageSlider from "@/components/ImageSlider";
-import StatsBar from "@/components/StatsBar";
 import { BUSINESS, SITE_URL } from "@/lib/config";
+
+// Deferred: framer-motion (StatsBar) and below-fold slider split into async chunks
+const StatsBar = dynamic(() => import("@/components/StatsBar"));
+const ImageSlider = dynamic(() => import("@/components/ImageSlider"), { ssr: false });
 
 export const metadata: Metadata = {
   title: "Antalya Hurdacı | Hurda Alım Satım – Demir, Bakır, Alüminyum",

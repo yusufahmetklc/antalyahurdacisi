@@ -77,6 +77,7 @@ export default function Hero() {
             className="object-cover object-center"
             sizes="100vw"
             priority={i === 0}
+            loading={i === 0 ? undefined : "lazy"}
           />
         </div>
       ))}
