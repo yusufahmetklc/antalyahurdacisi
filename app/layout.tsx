@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import dynamic from "next/dynamic";
 import "./globals.css";
 import { BUSINESS, SITE_URL } from "@/lib/config";
-
-// Deferred — fades in after 800 ms, no SSR value
-const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"), { ssr: false });
+import WhatsAppButtonLazy from "@/components/WhatsAppButtonLazy";
 
 const inter = Inter({
   // latin-ext is required for proper Turkish character rendering (ş ğ ü ö ç ı)
@@ -106,7 +103,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased min-h-full flex flex-col`}>
         {children}
-        <WhatsAppButton />
+        <WhatsAppButtonLazy />
       </body>
     </html>
   );
