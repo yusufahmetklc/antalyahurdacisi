@@ -1,85 +1,14 @@
-﻿"use client";
-
-import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
-import { BUSINESS } from "@/lib/config";
-
-const SLIDES = [
-  {
-    src: "/gallery/hurda-1.webp",
-    alt: "Antalya Hurdacı — hurda metal toplama operasyonu",
-  },
-  {
-    src: "/gallery/hurda-2.webp",
-    alt: "Profesyonel ekipmanlarla klima ve elektronik hurda alımı",
-  },
-  {
-    src: "/gallery/hurda-3.webp",
-    alt: "Büyük kapasiteli hurda metal toplama ve işleme sahası",
-  },
-  {
-    src: "/gallery/hurda-4.webp",
-    alt: "İnşaat sahası demir ve boru hurda alımı",
-  },
-];
+﻿import { BUSINESS } from "@/lib/config";
+import HeroSlideshow from "@/components/HeroSlideshow";
 
 export default function Hero() {
-  const [current, setCurrent] = useState(0);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  function restartTimer() {
-    if (timerRef.current) clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setCurrent((c) => (c + 1) % SLIDES.length);
-    }, 3000);
-  }
-
-  useEffect(() => {
-    restartTimer();
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  function goNext() {
-    setCurrent((c) => (c + 1) % SLIDES.length);
-    restartTimer();
-  }
-
-  function goPrev() {
-    setCurrent((c) => (c - 1 + SLIDES.length) % SLIDES.length);
-    restartTimer();
-  }
-
-  function goTo(index: number) {
-    setCurrent(index);
-    restartTimer();
-  }
-
   return (
     <section
       className="relative overflow-hidden min-h-[560px] sm:min-h-[640px] lg:min-h-[720px]"
       aria-labelledby="hero-heading"
     >
-      {/* ── Background slideshow ───────────────────────────────────── */}
-      {SLIDES.map((slide, i) => (
-        <div
-          key={slide.src}
-          aria-hidden="true"
-          className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-          style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
-        >
-          <Image
-            src={slide.src}
-            alt=""
-            fill
-            className="object-cover object-center"
-            sizes="100vw"
-            priority={i === 0}
-          />
-        </div>
-      ))}
+      {/* ── Background slideshow + dot indicators (Client Component) ── */}
+      <HeroSlideshow />
 
       {/* Dark overlay for text readability */}
       <div
@@ -168,30 +97,6 @@ export default function Hero() {
             </ul>
           </div>
 
-        </div>
-
-        {/* ── Dot indicators ─────────────────────────────────────────── */}
-        <div
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2"
-          role="tablist"
-          aria-label="Slayt göstergesi"
-        >
-          {SLIDES.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              role="tab"
-              aria-selected={i === current}
-              aria-label={`Görsel ${i + 1}`}
-              onClick={() => goTo(i)}
-              className="rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-              style={{
-                width: i === current ? "24px" : "6px",
-                height: "6px",
-                background: i === current ? "#F97316" : "rgba(255,255,255,0.4)",
-              }}
-            />
-          ))}
         </div>
       </div>
     </section>
