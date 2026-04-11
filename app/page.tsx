@@ -9,7 +9,7 @@ import { BUSINESS, SITE_URL } from "@/lib/config";
 
 // Deferred: framer-motion (StatsBar) and below-fold slider split into async chunks
 const StatsBar = dynamic(() => import("@/components/StatsBar"));
-const ImageSlider = dynamic(() => import("@/components/ImageSlider"), { ssr: false });
+const ImageSlider = dynamic(() => import("@/components/ImageSlider"));
 
 export const metadata: Metadata = {
   title: "Antalya Hurdacı | Hurda Alım Satım – Demir, Bakır, Alüminyum",

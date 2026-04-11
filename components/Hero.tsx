@@ -68,7 +68,7 @@ export default function Hero() {
           key={slide.src}
           aria-hidden="true"
           className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-          style={{ opacity: i === current ? 1 : 0, zIndex: 0 }}
+          style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
         >
           <Image
             src={slide.src}
@@ -77,7 +77,6 @@ export default function Hero() {
             className="object-cover object-center"
             sizes="100vw"
             priority={i === 0}
-            loading={i === 0 ? undefined : "lazy"}
           />
         </div>
       ))}
