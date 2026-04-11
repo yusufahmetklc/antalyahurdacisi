@@ -272,6 +272,19 @@ export default function IletisimPage() {
           </div>
         </section>
 
+        {/* ── Local SEO — hizmet bölgeleri ─────────────────────────── */}
+        <div className="bg-[#0F2A44] px-4 py-5 sm:px-8">
+          <div className="max-w-6xl mx-auto">
+            <p className="text-sm text-gray-300 leading-relaxed">
+              Antalya&apos;nın tüm ilçelerinde hurda alım hizmeti veriyoruz.{" "}
+              <span className="text-white font-semibold">
+                Kepez, Muratpaşa, Konyaaltı, Lara, Döşemealtı, Aksu, Manavgat, Alanya, Serik, Kaş, Kemer, Kumluca, Finike, Gazipaşa
+              </span>{" "}
+              ve diğer tüm bölgelerde yerinden hurda alımı yapılır.
+            </p>
+          </div>
+        </div>
+
         {/* ── Contact info + form ────────────────────────────────────── */}
         <section className="py-16 sm:py-24 bg-gray-50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
