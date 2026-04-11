@@ -6,19 +6,19 @@ import { BUSINESS } from "@/lib/config";
 
 const SLIDES = [
   {
-    src: "/gallery/hurda-1.png",
+    src: "/gallery/hurda-1.webp",
     alt: "Antalya Hurdacı — hurda metal toplama operasyonu",
   },
   {
-    src: "/gallery/hurda-2.png",
+    src: "/gallery/hurda-2.webp",
     alt: "Profesyonel ekipmanlarla klima ve elektronik hurda alımı",
   },
   {
-    src: "/gallery/hurda-3.png",
+    src: "/gallery/hurda-3.webp",
     alt: "Büyük kapasiteli hurda metal toplama ve işleme sahası",
   },
   {
-    src: "/gallery/hurda-4.png",
+    src: "/gallery/hurda-4.webp",
     alt: "İnşaat sahası demir ve boru hurda alımı",
   },
 ];

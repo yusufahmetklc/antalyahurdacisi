@@ -4,10 +4,10 @@ import { useState } from "react";
 import Image from "next/image";
 
 const SLIDES = [
-  { src: "/gallery/hurda-1.png", alt: "Hurda sahası – demir, bakır ve alüminyum hurda yığını" },
-  { src: "/gallery/hurda-2.png", alt: "Hurda toplama – klima ve beyaz eşya hurdaları" },
-  { src: "/gallery/hurda-3.png", alt: "Hurda alım operasyonu – mobilya ve elektronik hurda" },
-  { src: "/gallery/hurda-4.png", alt: "Hurda sahası genel görünüm" },
+  { src: "/gallery/hurda-1.webp", alt: "Hurda sahası – demir, bakır ve alüminyum hurda yığını" },
+  { src: "/gallery/hurda-2.webp", alt: "Hurda toplama – klima ve beyaz eşya hurdaları" },
+  { src: "/gallery/hurda-3.webp", alt: "Hurda alım operasyonu – mobilya ve elektronik hurda" },
+  { src: "/gallery/hurda-4.webp", alt: "Hurda sahası genel görünüm" },
 ];
 
 export default function ImageSlider() {
