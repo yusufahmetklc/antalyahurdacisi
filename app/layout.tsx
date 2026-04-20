@@ -34,6 +34,11 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true },
   },
+  icons: {
+    icon: "/logo-2.png",
+    shortcut: "/logo-2.png",
+    apple: "/logo-2.png",
+  },
   openGraph: {
     title: `${BUSINESS.name} | Hurda Alım Satım Hizmeti`,
     description:

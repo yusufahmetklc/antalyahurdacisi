@@ -158,6 +158,11 @@ export default function IletisimPage() {
             className="absolute inset-y-0 left-0 flex items-center"
             style={{ width: "min(420px, 90%)" }}
           >
+            {/* Logo ve başlık */}
+            <div className="absolute top-8 left-8 flex items-center gap-2.5 z-10">
+              <span className="flex items-center justify-center bg-[#F97316] text-white rounded-lg w-8 h-8 text-xs font-black tracking-wide shrink-0">AH</span>
+              <span className="font-bold text-lg text-white">Antalya Hurdacı</span>
+            </div>
             {/* Gradient fade: opaque → transparent */}
             <div
               className="absolute inset-0"
