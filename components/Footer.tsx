@@ -16,6 +16,7 @@ const services = [
   "Demir Hurda Alımı",
   "Bakır Hurda Alımı",
   "Alüminyum Hurda Alımı",
+  "Beyaz Eşya & Klima Hurda Alımı",
   "Yerinden Hurda Alımı",
   "Paslanmaz Çelik Alımı",
 ];

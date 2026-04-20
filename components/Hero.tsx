@@ -48,9 +48,7 @@ export default function Hero() {
 
             {/* Description */}
             <p className="text-base text-blue-100/80 leading-relaxed max-w-md">
-              Demir, bakır, alüminyum ve her türlü hurda metalinizi en yüksek
-              piyasa fiyatıyla satın alıyoruz. Antalya genelinde ücretsiz
-              yerinden alım, anında nakit ödeme.
+              Demir, bakır, alüminyum başta olmak üzere her türlü hurda metalinizi en yüksek piyasa fiyatlarıyla satın alıyoruz. Ayrıca buzdolabı, çamaşır makinesi, klima, gün ısı (güneş enerjisi) sistemleri ve benzeri beyaz eşya hurdalarınızı da değerinde alıyoruz. Antalya genelinde ücretsiz yerinden alım ve anında nakit ödeme imkanı sunuyoruz.
             </p>
 
             {/* CTAs */}

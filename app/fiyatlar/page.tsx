@@ -35,6 +35,17 @@ const PHONE = BUSINESS.phone;
 const WA_BASE = "https://wa.me/+905355515916?text=";
 
 const METALS = [
+    {
+      id: "beyaz-esya",
+      title: "Beyaz Eşya & Klima Hurda",
+      gradient: "from-cyan-500 to-cyan-800",
+      textAccent: "text-cyan-100",
+      badge: "bg-cyan-50 text-cyan-800",
+      icon: "🧊",
+      subTypes: ["Buzdolabı", "Çamaşır Makinesi", "Bulaşık Makinesi", "Klima", "Gün Isı (Güneş Enerjisi)", "Diğer Beyaz Eşya"],
+      factors: ["Çalışır/bozuk durumu", "Model ve marka", "Parça/komple alım"],
+      waMessage: "Merhaba, beyaz eşya ve klima hurda fiyatı öğrenmek istiyorum.",
+    },
   {
     id: "demir",
     title: "Demir & Çelik Hurda",

@@ -24,6 +24,7 @@ const SERVICE_ITEMS = [
   { label: "Kablo Hurda", href: "/hizmetler#kablo" },
   { label: "Kurşun Hurda", href: "/hizmetler#kursun" },
   { label: "Çinko Hurda", href: "/hizmetler#cinko" },
+  { label: "Beyaz Eşya & Klima Hurda", href: "/hizmetler#beyaz-esya" },
   { label: "Fabrika Sökümü", href: "/hizmetler#fabrika-sokumu" },
   { label: "Çelik Çatı Sökümü", href: "/hizmetler#cati-sokumu" },
 ];
