@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Hurda Hizmetlerimiz - Antalya Hurdacı | Hurda Alım Satım",
@@ -271,6 +272,27 @@ const services = [
       </svg>
     ),
   },
+  {
+    id: "beyaz-esya",
+    title: "Beyaz Eşya & Klima Hurda",
+    tagline: "Beyaz eşya ve klima sistemleri alımı",
+    description:
+      "Buzdolabı, çamaşır makinesi, bulaşık makinesi, klima ve güneş enerjisi sistemlerinizi çalışır ya da arızalı durumuyla satın alıyoruz. Profesyonel ekibimiz yerinde taşıma ve demantajını yaparak anında ödeme gerçekleştiriyor.",
+    subTypes: ["Buzdolabı & Dondurucu", "Çamaşır Makinesi", "Bulaşık Makinesi", "Klima Sistemi", "Güneş Enerjisi Paneli", "Hava Temizleyici"],
+    benefits: [
+      "Çalışır veya bozuk — her durumda alınır",
+      "Profesyonel yerinden taşıma",
+      "Hızlı demantaj ve temizlik",
+      "Anında nakit ödeme garantisi",
+    ],
+    accent: "bg-cyan-50 text-cyan-800",
+    iconBg: "bg-cyan-600",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M5 3h14a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z M3 9h18 M12 9a5 5 0 1 0 0 10a5 5 0 0 0 0-10" />
+      </svg>
+    ),
+  },
 ];
 
 // ─── Page ────────────────────────────────────────────────────────────────────
@@ -350,10 +372,8 @@ export default function HizmetlerPage() {
                   {/* Visual card */}
                   <div className="w-full lg:w-2/5 shrink-0">
                     <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 aspect-[4/3] flex flex-col items-center justify-center gap-6 p-10 relative">
-                      {/* Large icon */}
-                      <div
-                        className={`flex items-center justify-center w-20 h-20 rounded-2xl text-white shadow-lg ${service.iconBg}`}
-                      >
+                      {/* Large icon or image */}
+                      <div className={`flex items-center justify-center w-20 h-20 rounded-2xl text-white shadow-lg ${service.iconBg}`}>
                         <span className="scale-150">{service.icon}</span>
                       </div>
                       {/* Tagline */}

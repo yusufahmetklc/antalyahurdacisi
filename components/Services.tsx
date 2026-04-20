@@ -4,11 +4,13 @@ import { motion, MotionConfig, animate, useInView } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { useRef, useEffect } from "react";
 import TiltCard from "@/components/TiltCard";
+import Image from "next/image";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const SERVICES = [
   {
+    id: "demir",
     title: "Demir Hurda",
     description:
       "Her türlü demir ve çelik hurda malzemenizi güncel piyasa fiyatlarıyla satın alıyoruz.",
@@ -19,6 +21,7 @@ const SERVICES = [
     ],
   },
   {
+    id: "bakir",
     title: "Bakır Hurda",
     description:
       "Bakır kablo, boru, profil ve sac gibi tüm bakır hurdalarınızı en yüksek fiyatla değerlendiriyoruz.",
@@ -29,6 +32,7 @@ const SERVICES = [
     ],
   },
   {
+    id: "aluminyum",
     title: "Alüminyum Hurda",
     description:
       "Alüminyum profil, kasa, kapı, pencere ve sac hurdalarınızı eksiksiz satın alıyoruz.",
@@ -39,6 +43,7 @@ const SERVICES = [
     ],
   },
   {
+    id: "yerinden-alim",
     title: "Yerinden Hurda Alımı",
     description:
       "Siz taşımayın, biz geliyoruz! Antalya içi ücretsiz yerinden alım hizmeti.",
@@ -46,6 +51,19 @@ const SERVICES = [
     features: ["Ücretsiz araç", "Aynı gün alım"],
     paths: [
       "M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12",
+    ],
+  },
+  {
+    title: "Beyaz Eşya & Klima Hurda",
+    description:
+      "Buzdolabı, çamaşır makinesi, bulaşık makinesi, klima ve güneş enerjisi sistemlerinizi yerinden alıyor, değerinde nakit ödeme yapıyoruz.",
+    tag: null,
+    features: ["Yerinden alım", "Nakit ödeme"],
+    id: "beyaz-esya",
+    paths: [
+      "M5 3h14a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z",
+      "M3 9h18",
+      "M12 9a5 5 0 1 0 0 10a5 5 0 0 0 0-10",
     ],
   },
 ];
@@ -308,6 +326,7 @@ export default function Services() {
           >
             {SERVICES.map((service, i) => (
               <motion.div
+                id={service.id}
                 key={service.title}
                 variants={CARD_FLIP}
                 custom={i}
@@ -333,9 +352,24 @@ export default function Services() {
                     }}
                   />
 
-                  {/* Icon box */}
-                  <div className="w-14 h-14 bg-orange-50 group-hover:bg-orange-600 text-orange-600 group-hover:text-white rounded-xl flex items-center justify-center mb-5 transition-colors duration-300">
-                    <AnimatedIcon paths={service.paths} delay={0.35 + i * 0.11} />
+
+                  {/* Görsel ve Icon box */}
+                  <div className="flex flex-col items-center mb-5">
+                    <div className="relative w-16 h-16 mb-2 rounded-xl overflow-hidden shadow-md bg-gray-50">
+                      <Image
+                        src={`/services/${service.id}.jpg`}
+                        alt={service.title + " görseli"}
+                        fill
+                        className="object-cover"
+                        sizes="64px"
+                        priority={i < 2}
+                        draggable={false}
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                      />
+                    </div>
+                    <div className="w-14 h-14 bg-orange-50 group-hover:bg-orange-600 text-orange-600 group-hover:text-white rounded-xl flex items-center justify-center transition-colors duration-300">
+                      <AnimatedIcon paths={service.paths} delay={0.35 + i * 0.11} />
+                    </div>
                   </div>
 
                   {/* Title */}

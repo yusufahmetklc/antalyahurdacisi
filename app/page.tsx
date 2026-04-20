@@ -55,6 +55,11 @@ const SERVICES = [
     desc: "NYY, NYAF, alüminyum ve bakır kablo; soyulmuş veya soyulmamış.",
     href: "/hizmetler#kablo",
   },
+  {
+    title: "Beyaz Eşya & Klima Hurda",
+    desc: "Buzdolabı, çamaşır makinesi, bulaşık makinesi, klima ve güneş enerjisi sistemleri.",
+    href: "/hizmetler#beyaz-esya",
+  },
 ];
 
 const REASONS = [
